@@ -8,9 +8,7 @@ import { Menu, Input, Row, Col } from "antd";
 import LoginForm from "./LoginForm";
 import UserProfile from "./UserProfile";
 
-const SCol = styled(Col)`
-  border: 1px solid red;
-`;
+const SCol = styled(Col)``;
 
 const AppLayout = ({ children }) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
