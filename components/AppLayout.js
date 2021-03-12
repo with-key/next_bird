@@ -1,17 +1,17 @@
-import React, { useState } from "react";
-import PropTypes from "prop-types";
+import React from "react";
 import Link from "next/link"; //링크 컴포넌트
 import styled from "styled-components";
 import { Menu, Input, Row, Col } from "antd";
 
-//
 import LoginForm from "./LoginForm";
 import UserProfile from "./UserProfile";
-
-const SCol = styled(Col)``;
+import { useSelector } from "react-redux";
 
 const AppLayout = ({ children }) => {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const isLoggedIn = useSelector((state) => {
+    console.log(state.user.user);
+    return state.user.isLoggedIn;
+  });
   return (
     <div>
       <Menu mode="horizontal">
@@ -36,27 +36,17 @@ const AppLayout = ({ children }) => {
       </Menu>
       <Row gutter={20}>
         <SCol xs={24} md={6}>
-          {isLoggedIn ? (
-            <UserProfile setIsLoggedIn={setIsLoggedIn} />
-          ) : (
-            <LoginForm setIsLoggedIn={setIsLoggedIn} />
-          )}
+          {isLoggedIn ? <UserProfile /> : <LoginForm />}
         </SCol>
         <SCol xs={24} md={12}>
           {children}
         </SCol>
-        <SCol xs={24} md={6}>
-          <a href="https://naver.com" target="_blank" rel="noreferrer noopener">
-            made by WithYe
-          </a>
-        </SCol>
+        <SCol xs={24} md={6}></SCol>Z
       </Row>
     </div>
   );
 };
 
-AppLayout.propTypes = {
-  children: PropTypes.node.isRequired,
-};
+const SCol = styled(Col)``;
 
 export default AppLayout;

@@ -26,6 +26,7 @@ const FollowList = ({ header, data }) => {
       }
       bordered
       dataSource={data}
+      // dataSource 와 renderItem 관계
       renderItem={(item) => (
         <List.Item>
           <Card actions={[<StopOutlined key="stop"></StopOutlined>]}>

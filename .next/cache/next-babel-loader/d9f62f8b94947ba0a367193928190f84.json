@@ -1,0 +1,1 @@
+{"ast":null,"code":"export const initialState = {};","map":{"version":3,"sources":["/Users/yesang-gi/Desktop/workspace/nodebird/front/reducers/post.js"],"names":["initialState"],"mappings":"AAAA,OAAO,MAAMA,YAAY,GAAG,EAArB","sourcesContent":["export const initialState = {};\n"]},"metadata":{},"sourceType":"module"}

@@ -1,10 +1,18 @@
-import React from "react"; // next.js에서는 안써도 됨. 다만, 폴더의 이름이 반드시 pages여야 함
+import React from "react";
+import { useSelector } from "react-redux";
 import AppLayout from "../components/AppLayout";
+import PostCard from "../components/PostCard";
+import PostForm from "../components/PostForm";
 
 const Home = () => {
+  const { isLoggedIn } = useSelector((state) => state.user);
+  const { mainPosts } = useSelector((state) => state.post);
   return (
     <AppLayout>
-      <div>hello, Next!</div>
+      {isLoggedIn && <PostForm />}
+      {mainPosts.map((post) => (
+        <PostCard key={post.id} post={post} />
+      ))}
     </AppLayout>
   );
 };
