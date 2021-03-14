@@ -10,26 +10,32 @@ export const initialState = {
       Images: [
         {
           src:
-            "https://www.google.com/imgres?imgurl=https%3A%2F%2Fd2v80xjmx68n4w.cloudfront.net%2Fgigs%2Fz7yn41576604482.jpg&imgrefurl=https%3A%2F%2Fkmong.com%2Fgig%2F19912&tbnid=ZNUUliHAqZn5GM&vet=10CGAQMyiSAWoXChMIkJ2e0qij7wIVAAAAAB0AAAAAEAI..i&docid=ChU6LCiO0sfLcM&w=652&h=488&q=%EC%9D%BC%EB%9F%AC%EC%8A%A4%ED%8A%B8&ved=0CGAQMyiSAWoXChMIkJ2e0qij7wIVAAAAAB0AAAAAEAI",
+            "https://images.unsplash.com/photo-1541807084-5c52b6b3adef?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1268&q=80",
         },
         {
           src:
-            "https://www.google.com/imgres?imgurl=https%3A%2F%2Fd2v80xjmx68n4w.cloudfront.net%2Fgigs%2Fz7yn41576604482.jpg&imgrefurl=https%3A%2F%2Fkmong.com%2Fgig%2F19912&tbnid=ZNUUliHAqZn5GM&vet=10CGAQMyiSAWoXChMIkJ2e0qij7wIVAAAAAB0AAAAAEAI..i&docid=ChU6LCiO0sfLcM&w=652&h=488&q=%EC%9D%BC%EB%9F%AC%EC%8A%A4%ED%8A%B8&ved=0CGAQMyiSAWoXChMIkJ2e0qij7wIVAAAAAB0AAAAAEAI",
+            "https://images.unsplash.com/photo-1541807084-5c52b6b3adef?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1268&q=80",
         },
         {
           src:
-            "https://www.google.com/imgres?imgurl=https%3A%2F%2Fd2v80xjmx68n4w.cloudfront.net%2Fgigs%2Fz7yn41576604482.jpg&imgrefurl=https%3A%2F%2Fkmong.com%2Fgig%2F19912&tbnid=ZNUUliHAqZn5GM&vet=10CGAQMyiSAWoXChMIkJ2e0qij7wIVAAAAAB0AAAAAEAI..i&docid=ChU6LCiO0sfLcM&w=652&h=488&q=%EC%9D%BC%EB%9F%AC%EC%8A%A4%ED%8A%B8&ved=0CGAQMyiSAWoXChMIkJ2e0qij7wIVAAAAAB0AAAAAEAI",
+            "https://images.unsplash.com/photo-1541807084-5c52b6b3adef?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1268&q=80",
         },
       ],
-      Comments: [{ User: { nickname: "nero" }, content: "얼른 사고 싶어요" }],
+      Comments: [
+        { User: { nickname: "nero" }, content: "얼른 사고 싶어요" },
+        { User: { nickname: "nero" }, content: "얼른 사고 싶어요" },
+        { User: { nickname: "nero" }, content: "얼른 사고 싶어요" },
+      ],
     },
   ],
   ImagePaths: [],
   postAdded: false,
 };
 
+// action.type
 const ADD_POST = "ADD_POST";
 
+// action creator
 export const addPost = {
   type: ADD_POST,
 };

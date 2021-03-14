@@ -9,7 +9,6 @@ import { useSelector } from "react-redux";
 
 const AppLayout = ({ children }) => {
   const isLoggedIn = useSelector((state) => {
-    console.log(state.user.user);
     return state.user.isLoggedIn;
   });
   return (
@@ -41,7 +40,7 @@ const AppLayout = ({ children }) => {
         <SCol xs={24} md={12}>
           {children}
         </SCol>
-        <SCol xs={24} md={6}></SCol>Z
+        <SCol xs={24} md={6}></SCol>
       </Row>
     </div>
   );

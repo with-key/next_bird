@@ -1,5 +1,5 @@
 import React, { useCallback, useState } from "react";
-import { Button, Card, Popover } from "antd";
+import { Button, Card, Popover, List, Comment } from "antd";
 import {
   EllipsisOutlined,
   HeartOutlined,
@@ -10,6 +10,7 @@ import {
 import { useSelector } from "react-redux";
 import Avatar from "antd/lib/avatar/avatar";
 import PostImages from "./PostImages";
+import CommentForm from "./CommentForm";
 
 const PostCard = ({ post }) => {
   const [liked, useLiked] = useState(false);
@@ -20,6 +21,7 @@ const PostCard = ({ post }) => {
 
   const onToggleLiked = useCallback(() => {
     useLiked((pre) => !pre);
+    //toggle 만들 때 많이 쓰는 예문
   });
 
   const onToggleComment = useCallback(() => {
@@ -29,7 +31,7 @@ const PostCard = ({ post }) => {
   return (
     <div>
       <Card
-        cover={post.Images[0] && <PostImages images={post.images} />}
+        cover={post.Images[0] && <PostImages images={post.Images} />}
         actions={[
           <RetweetOutlined key="retweet" />,
           liked ? (
@@ -67,7 +69,26 @@ const PostCard = ({ post }) => {
           description={post.content}
         />
       </Card>
-      {commentFormOpened && <div>입력창</div>}
+      {/* 댓글창을 열었을 때 */}
+      {commentFormOpened && (
+        <div>
+          <CommentForm post={post} />
+          <List
+            header={`${post.Comments.length}개의 댓글`}
+            itemLayout="horizontal"
+            dataSource={post.Comments}
+            renderItem={(item) => (
+              <li>
+                <Comment
+                  author={item.User.nickname}
+                  avatar={<Avatar>{item.User.nickname[0]}</Avatar>}
+                  content={item.content}
+                />
+              </li>
+            )}
+          />
+        </div>
+      )}
     </div>
   );
 };
