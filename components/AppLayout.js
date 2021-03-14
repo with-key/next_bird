@@ -12,7 +12,7 @@ const AppLayout = ({ children }) => {
     return state.user.isLoggedIn;
   });
   return (
-    <div>
+    <Container>
       <Menu mode="horizontal">
         <Menu.Item>
           <Link href="/">
@@ -42,10 +42,13 @@ const AppLayout = ({ children }) => {
         </SCol>
         <SCol xs={24} md={6}></SCol>
       </Row>
-    </div>
+    </Container>
   );
 };
 
+const Container = styled.section`
+  height: 200vh;
+`;
 const SCol = styled(Col)``;
 
 export default AppLayout;
